@@ -1,27 +1,219 @@
+<?php
+
+//Check if we are in WordPress
+
+?>
+
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Ronak Karimi - Personal homepage</title>
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Ronak!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="https://github.com/ronak-karimi">https://github.com/ronak-karimi</a></li>
-			</ul>
-		</footer>
-	</body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script src="https://unpkg.com/@google/markerclustererplus@4.0.1/dist/markerclustererplus.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <title>Ronak Karimi - Home Page</title>
+
+  <style>
+
+    body{
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:0;
+    padding:0;
+
+    font-family: "Lato", sans-serif;
+    font-size:13.5pt;
+    min-width:800px;
+    min-height:700px;
+    }
+
+    select{
+      height:30px;
+      font-size:13pt;
+      padding-left:10px;
+      padding-right:10px;
+      color:#444;
+      border-radius:5px;
+    }
+
+    .toolbar{
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:0;
+    padding:15px;
+    padding-top:25px;
+    padding-bottom:30px;
+    background-color: #000;
+    color:white;
+    display:flex;
+    border:0px solid black;
+    vertical-align:middle;
+    box-shadow:0 1px 10px 0 gray;
+    transition: all 0.2s linear;
+    height:80px;
+    }
+
+    .backdropScreen{
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      bottom:0;
+      z-index:1000;
+
+    }
+
+
+
+    .left80{
+      width:76%;
+      display:inline-block;
+      margin:0;
+      padding:0;
+      border:0px solid red;
+      vertical-align:middle;
+    }
+
+    .right20{
+      width:24%;
+
+      margin:0;
+      padding:0;
+      border:0px solid red;
+      vertical-align:middle;
+    }
+
+    .left70{
+      width:70%;
+      height:100%;
+      margin:0;
+      padding:0;
+      border:0px solid red;
+
+    }
+
+    .right30{
+      width:30%;
+      height:100%;
+      margin:0;
+      padding:0px;
+      border:0px solid red;
+      text-align:center;
+      overflow: auto;
+
+    }
+
+
+
+    .totip{
+      position:relative;
+      display:inline-block;
+    }
+    .totip .ttxt{
+      opacity: 0;
+      visibility: hidden;
+      background-color: #444;
+      color: #fff;
+      transition: all 1s;
+      width: 300px;
+      text-align: left;
+      border-radius: 6px;
+      padding: 8px;
+      top: 0;
+      left: 110%;
+      margin-left: 0px;
+      z-index:1000;
+      position: absolute;
+    }
+
+    .totip .ttxt::after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent #444 transparent transparent;
+    }
+
+    .totip:hover .ttxt {
+      visibility: visible;
+      opacity: 1;
+    }
+
+  </style>
+
+
+</head>
+<body style="">
+  <div class=toolbar id=toolbar>
+    <div style="display:inline-block;background-color:#fff;color:#000;margin-top:-10px;margin-bottom:-30px;margin-left:-15px;width:250px;border-radius:0px 30px 0 0;padding-top:15px;">
+      <center><b>Ronak's Home Page</b></center>
+    </div>
+    <div style="width:calc(100% - 250px);text-align:right;background:transparent">
+      <a href="http://www.ronakphotography.com/" ><img src=ronakphotography.png height=35px></a> &nbsp; &nbsp; &nbsp;
+      <a href="https://www.linkedin.com/in/ronak-karimi-906977202/" ><img src=linkedin.png height=28px></a> &nbsp; &nbsp; &nbsp;
+      <a href="https://www.instagram.com/ronakk.photography/" ><img src=instagram.png height=28px></a> &nbsp; &nbsp; &nbsp;
+      <a href="https://scholar.google.com/citations?user=ue84Tm4AAAAJ&hl=en" style=filter:brightness(400%)><img src=scholar.png height=28px> </a> &nbsp; &nbsp; &nbsp;
+      <a href="https://github.com/ronak-karimi" ><img src=github.png height=28px style=filter:brightness(130%)></a> &nbsp; &nbsp; &nbsp;
+    </div>
+  </div>
+
+  <!--- End of Toolbar --->
+
+  <div style="
+     width:100%;
+     height:calc(100vh - 80px);
+     background-color:#fff;
+     display:flex
+     ">
+
+  <div class="left70" style=padding:80px>
+    <h2>UX/UI Designer | Photographer </h2>
+    Graduate Student in Human Computer Interaction<br>
+    <br>
+    <br>
+    <h3>For more info, please see the following links:</h3>
+
+    <a href="https://www.linkedin.com/in/ronak-karimi-906977202/" >- LinkedIn</a>
+    <br>
+    <a href="http://www.ronakphotography.com/" > - Ronak Photography (website)</a>
+    <br>
+    <a href="https://www.instagram.com/ronakk.photography/" > - Instagram (Photography page)</a>
+    <br>
+    <a href="https://scholar.google.com/citations?user=ue84Tm4AAAAJ&hl=en" > - Googler Scholar</a>
+    <br>
+    <a href="https://github.com/ronak-karimi" > - Github</a>
+
+  </div>
+
+  <div class="right30">
+    <img src=ronak.jpeg style="border-radius:50%;width:95%;margin-top:30px;box-shadow:1px 0 10px 0 gray;border:1px solid #fff">
+    <br><br>
+    <h2>Ronak Karimi<span style=font-size:15pt>, M.A.</span></h2>
+    she/her/hers
+  </div>
+
+  </div>
+
+
+</body>
 </html>
+<script src=assets/js/map.js?x=8></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBjkMRLwx8-IVDDKd4YCl3Tvs5YmHuk3Ew&callback=initMap&libraries=places&v=weekly"></script>
